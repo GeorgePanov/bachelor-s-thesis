@@ -1,0 +1,213 @@
+/* Colors: https://www.qrry.com/wp-content/uploads/2019/11/beautiful-color-gradient-palettes-3.jpg */
+
+/* color 
+Pinky: #fbe3e8
+
+Blue Greeny: #5cbdb9
+
+Teeny Greeny: #ebf6f5 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #ebf6f5;
+    height: 100%;
+}
+
+
+
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* background: #fbe3e8; */
+}
+
+.form {
+    position: relative;
+    width: 530px;
+    padding: 40px 40px 60px;
+    background: #ebf6f5;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.8),
+        5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.form h2 {
+    color: #5cbdb9;
+    font-weight: 600;
+    text-transform: uppercase;
+    /*шрифт капсом*/
+    letter-spacing: 5px;
+    font-size: 30px;
+}
+
+.form .input {
+    text-align: left;
+    margin-top: 40px;
+}
+
+.form .input .inputbox {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.form .input .inputbox label {
+    display: block;
+    /*текст над блоком*/
+    color: rgb(107, 107, 107);
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.form .input .inputbox p {
+    display: block;
+    /*текст над блоком*/
+    color: rgb(107, 107, 107);
+    margin-bottom: 5px;
+    font-size: 16px;
+    line-height: 28px;
+
+}
+
+/* Форма для заполнения */
+.form .input .inputbox input {
+    width: 100%;
+    height: 50px;
+    background: #ebf6f5;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    padding: 5px 15px;
+    color: #5cbdb9;
+    font-size: 18px;
+    box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 1),
+        inset 2px 2px 6px rgb(0, 0, 0, 0.1);
+}
+
+.form .input .inputbox select {
+    width: 100%;
+    height: 50px;
+    background: #ebf6f5;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    padding: 5px 15px;
+    color: rgb(107, 107, 107);
+
+    font-size: 18px;
+    box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 1),
+        inset 2px 2px 6px rgb(0, 0, 0, 0.1);
+}
+
+.form .input .inputbox button {
+    margin: 20px;
+    margin-left: auto;
+    width: 100%;
+    height: 50px;
+    background: #fbe3e8;
+    border: none;
+    border-radius: 40px;
+    padding: 5px 15px;
+    color: rgb(107, 107, 107);
+    font-size: 18px;
+    box-shadow: -2px -2px 6px rgba(255, 255, 255, 1),
+        2px 2px 6px rgb(0, 0, 0, 0.1);
+}
+
+.form .input .inputbox button:active {
+    box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 1),
+        inset 2px 2px 6px rgb(0, 0, 0, 0.1);
+}
+
+.prediction_text {
+    margin: 20px;
+    display: block;
+    text-align: center;
+    /*текст над блоком*/
+    color: rgb(107, 107, 107);
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+
+
+
+footer {
+    background: #5cbdb9;
+    height: auto;
+    width: auto;
+    padding-top: 40px;
+    color: #ebf6f5;
+    margin-top: 5rem;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-content h3 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+
+.footer-content p {
+    max-width: 700px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-style: 14px;
+}
+
+.socials {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 2rem 0;
+}
+
+.socials li {
+    margin: 0 10px;
+}
+
+.socials a {
+    text-decoration: none;
+    color: #ebf6f5;
+}
+
+.socials a i {
+    font-size: 2rem;
+    transition: color .6s ease;
+}
+
+.socials a:hover i {
+    color: #fbe3e8;
+}
+
+.footer-bottom {
+    background: #5AB8B5;
+    width: auto;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    word-spacing: 2px;
+    /* text-transform: capitalize; */
+}
