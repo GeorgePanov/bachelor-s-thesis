@@ -4,7 +4,7 @@ import pickle
 
 # Create flask app
 flask_app = Flask(__name__)
-model = pickle.load(open("heart.pkl", "rb"))
+model = pickle.load(open("develop a model/heart.pkl", "rb"))
 
 
 @flask_app.route("/")

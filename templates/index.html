@@ -27,16 +27,10 @@
     </nav>
     <main class="main">
 
-
-        <!-- <div class="text">
-            <p>инструкция</p>
-        </div> -->
-
-
         <div class="form">
             <h2>Форма</h2>
-            <form action="#" method="post" class="input" novalidate>
-            <!-- <form action="{{ url_for('predict')}}" method="post" class="input" novalidate> -->
+            <!-- <form action="#" method="post" class="input" novalidate> -->
+            <form action="{{ url_for('predict')}}" method="post" class="input">
                 <div class="inputbox">
                     <label>Возраст</label>
                     <input type="number" name="age" placeholder="" required>
