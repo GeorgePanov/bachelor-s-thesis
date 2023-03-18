@@ -211,3 +211,21 @@ footer {
     word-spacing: 2px;
     /* text-transform: capitalize; */
 }
+
+
+header {
+    /* background: #5cbdb9; */
+    height: auto;
+    width: auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    color: #5cbdb9;
+}
+
+header h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
