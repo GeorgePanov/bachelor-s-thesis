@@ -12,7 +12,7 @@ def Home():
     return render_template("index.html")
 
 
-@flask_app.route("/predict", methods=['GET', 'POST'])
+@flask_app.route("/", methods=['GET', 'POST'])
 def predict():
     data1 = request.form['age']
     data2 = request.form['sex']
