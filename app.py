@@ -12,7 +12,7 @@ def Home():
     return render_template("index.html")
 
 
-@flask_app.route("/", methods=['GET', 'POST'])
+@flask_app.route("/predict", methods=['GET', 'POST'])
 def predict():
     data1 = request.form['age']
     data2 = request.form['sex']
@@ -29,16 +29,15 @@ def predict():
     arr = np.array([[data1, data2, data3, data4, data5, data6,
                    data7, data8, data9, data10, data11]])
     pred = model.predict(arr)
+    pred_proba = model.predict_proba(arr)
 
     try:
         if pred == 1:
-            return render_template("index.html", prediction_text="Срочно идите к кардиологу")
+            return render_template("index.html", prediction_text="Срочно идите к кардиологу", predict_probability=pred_proba[0][1].round(4))
         elif pred == 0:
-            return render_template("index.html", prediction_text="Вы можете не торопиться идти к кардеологу")
+            return render_template("index.html", prediction_text="Вы можете не торопиться идти к кардеологу", predict_probability=pred_proba[0][1].round(4))
     except:
         return render_template("index.html", prediction_text="Что-то сломалось")
-    
-    # return render_template("index.html", prediction_text="вероятность ССЗ = {}".format(pred))
 
 
 if __name__ == "__main__":
