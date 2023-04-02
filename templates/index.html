@@ -8,6 +8,8 @@
 
     <title>Прогнозирование ССЗ</title>
     <meta name="author" content="George Panov">
+    <meta name="description" content="Бакалаврская дипломная работа Георгия Панова" />
+
     <link rel="icon" href="../static/icon/heart_cute_emoji_emo_icon_131637.ico">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
 
@@ -78,8 +80,8 @@
                 <div class="inputbox">
                     <label>ЭКГ в состоянии покоя</label>
                     <p>- Normal: Нормальное</p>
-                    <p>- ST: наличие аномалии зубца ST-T (инверсии зубца T и/или подъем или депрессия ST > 0,05 мм)</p>
                     <p>- LVH: наличие вероятной или определенной гипертрофии левого желудочка по критериям Эстеса</p>
+                    <p>- ST: наличие аномалии зубца ST-T (инверсии зубца T и/или подъем или депрессия ST > 0,05 мм)</p>
 
                     <select name="resting_ecg" required>
                         <option value="" selected="true" disabled="disabled">Выбрать...</option>
@@ -113,7 +115,7 @@
                     <label>Сегмент ST пиковой нагрузки</label>
                     <select name="st_slope" required>
                         <option value="" selected="true" disabled="disabled">Выбрать...</option>
-                        <option value="0">Поский</option>
+                        <option value="0">Плоский</option>
                         <option value="1">Наклон вверх</option>
                         <option value="2">Наклон вниз</option>
                     </select>
