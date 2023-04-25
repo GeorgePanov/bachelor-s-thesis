@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Прогнозирование ССЗ</title>
+    <meta name="author" content="George Panov">
+    <meta name="description" content="Бакалаврская дипломная работа Георгия Панова" />
+
+    <link rel="icon" href="../static/icon/heart_cute_emoji_emo_icon_131637.ico">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"> -->
+    <link rel="stylesheet" href="../static/style.css">
+
+
+</head>
+
+<body>
+    <header>
+        <h1>Прогнозирование развития сердечно-сосудистых заболеваний</h1>
+    </header>
+
+    <nav>
+
+    </nav>
+    <main class="main">
+
+        <div class="form">
+            <h2>Форма</h2>
+            <!-- <form action="#" method="post" class="input" novalidate> -->
+            <form action="{{ url_for('predict')}}" method="post" class="input">
+                <div class="inputbox">
+                    <label>Возраст</label>
+                    <input type="number" name="age" placeholder="" required>
+                </div>
+
+                <div class="inputbox">
+                    <label>Пол</label>
+                    <select name="sex" required>
+                        <option value="" selected="true" disabled="disabled">Выбрать...</option>
+                        <option value="0">Мужской</option>
+                        <option value="1">Женский</option>
+                    </select>
+                </div>
+
+                <div class="inputbox">
+                    <label>Тип боли в груди</label>
+                    <select name="chest_pain_type" required>
+                        <option value="" selected="false" disabled="disabled">Выбрать...</option>
+                        <option value="0">Бессимптомная</option>
+                        <option value="1">Неангинальная боль</option>
+                        <option value="2">Атипичная стенокардия</option>
+                        <option value="3">Типичная стенокардия</option>
+                    </select>
+                </div>
+
+                <div class="inputbox">
+                    <label>Давление в покое</label>
+                    <input type="number" name="resting_bp" placeholder="мм. рт. ст." required>
+                </div>
+
+                <div class="inputbox">
+                    <label>Холестерин в крови</label>
+                    <input type="number" name="cholesterol" placeholder="мм/дл" required>
+                </div>
+
+                <div class="inputbox">
+                    <label>Уровень сахара в крови натощак</label>
+                    <select name="fasting_bs" required>
+                        <option value="" selected="true" disabled="disabled">Выбрать...</option>
+                        <option value="0">больше 120 мг/дл</option>
+                        <option value="1">меньше 120 мг/дл</option>
+                    </select>
+                </div>
+
+                <div class="inputbox">
+                    <label>ЭКГ в состоянии покоя</label>
+                    <p>- Normal: Нормальное</p>
+                    <p>- LVH: наличие вероятной или определенной гипертрофии левого желудочка по критериям Эстеса</p>
+                    <p>- ST: наличие аномалии зубца ST-T (инверсии зубца T и/или подъем или депрессия ST > 0,05 мм)</p>
+
+                    <select name="resting_ecg" required>
+                        <option value="" selected="true" disabled="disabled">Выбрать...</option>
+                        <option value="0">normal</option>
+                        <option value="1">LVH</option>
+                        <option value="2">ST</option>
+                    </select>
+                </div>
+
+
+                <div class="inputbox">
+                    <label>Максимальная ЧСС </label>
+                    <input type="number" name="max_hr" placeholder="Количество ударов в минуту" required>
+                </div>
+
+                <div class="inputbox">
+                    <label>Стенокардия после физнагрузки</label>
+                    <select name="exercise_angina" required>
+                        <option value="" selected="true" disabled="disabled">Выбрать...</option>
+                        <option value="1">Есть</option>
+                        <option value="0">Нет</option>
+                    </select>
+                </div>
+
+                <div class="inputbox">
+                    <label>Индуцированная депрессия ST</label>
+                    <input type="number" name="oldpeak" step="0.1" placeholder="мВ/сек" required>
+                </div>
+
+                <div class="inputbox">
+                    <label>Сегмент ST пиковой нагрузки</label>
+                    <select name="st_slope" required>
+                        <option value="" selected="true" disabled="disabled">Выбрать...</option>
+                        <option value="0">Плоский</option>
+                        <option value="1">Наклон вверх</option>
+                        <option value="2">Наклон вниз</option>
+                    </select>
+                </div>
+
+                <div class="inputbox">
+                    <button>Узнать прогноз</button>
+                </div>
+
+                <div class="prediction_text">
+                    <label>{{ prediction_text }}</label><br>
+
+                    <label>Вероятность ССЗ – </label>
+                    <label>{{ predict_probability }}</label>
+                </div>
+
+            </form>
+        </div>
+
+
+
+    </main>
+
+
+    <footer>
+        <div class="footer-content">
+            <h3>Дипломный проект</h3>
+            <p>Сердечно-сосудистые заболевания являются ведущей причиной смерти во всем мире. В 2016 году число смертей
+                составило примерно 56 195 600 человек, 17,9 миллиона из которых умерли в результате сердечно-сосудистых
+                заболеваний. Это примерно 32% всех смертей. Люди с сердечно-сосудистыми заболеваниями или с высоким
+                сердечно-сосудистым риском нуждаются в раннем выявлении и лечении. <br>
+                Цель моей бакалаврской диссертации - создать модель машинного обучения, которая может прогнозировать
+                сердечно-сосудистые заболевания на основе поступающих данных, тем самым помогая спасти множество жизней.
+            </p>
+            <ul class="socials">
+                <li><a href="mailto:georgepanov19@gmail.com" target="_blank"><i class="fa fa-envelope"
+                            aria-hidden="true"></i></a></li>
+                <li><a href="https://github.com/GeorgePanov/bachelor-s-thesis" target="_blank"><i
+                            class='fa fa-github'></i></a></li>
+                <li><a href="https://t.me/mister_glam_peach" target="_blank"><i class='fa fa-telegram'></i></a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>Made by George Panov in March 2023
+        </div>
+
+    </footer>
+</body>
+
+</html>
