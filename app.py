@@ -15,16 +15,17 @@ def Home():
 @flask_app.route("/predict", methods=['GET', 'POST'])
 def predict():
     data1 = request.form['age']
-    data2 = request.form['sex']
-    data3 = request.form['chest_pain_type']
-    data4 = request.form['resting_bp']
-    data5 = request.form['cholesterol']
-    data6 = request.form['fasting_bs']
-    data7 = request.form['resting_ecg']
-    data8 = request.form['max_hr']
-    data9 = request.form['exercise_angina']
-    data10 = request.form['oldpeak']
-    data11 = request.form['st_slope']
+    data2 = request.form['gender']
+    data3 = request.form['height']
+    data4 = request.form['weight']
+    data5 = request.form['ap_hi']
+    data6 = request.form['ap_lo']
+    data7 = request.form['cholesterol']
+    data8 = request.form['gluc']
+    data9 = request.form['smoke']
+    data10 = request.form['alco']
+    data11 = request.form['active']
+
 
     arr = np.array([[data1, data2, data3, data4, data5, data6,
                    data7, data8, data9, data10, data11]])
