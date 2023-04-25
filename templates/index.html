@@ -8,7 +8,7 @@
 
     <title>Прогнозирование ССЗ</title>
     <meta name="author" content="George Panov">
-    <meta name="description" content="Бакалаврская дипломная работа Георгия Панова" />
+    <meta name="description" content="Бакалаврская дипломная работа Георгия Панова">
 
     <link rel="icon" href="../static/icon/heart_cute_emoji_emo_icon_131637.ico">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
@@ -33,6 +33,7 @@
             <h2>Форма</h2>
             <!-- <form action="#" method="post" class="input" novalidate> -->
             <form action="{{ url_for('predict')}}" method="post" class="input">
+
                 <div class="inputbox">
                     <label>Возраст</label>
                     <input type="number" name="age" placeholder="" required>
@@ -40,90 +41,89 @@
 
                 <div class="inputbox">
                     <label>Пол</label>
-                    <select name="sex" required>
+                    <select name="gender" required>
                         <option value="" selected="true" disabled="disabled">Выбрать...</option>
-                        <option value="0">Мужской</option>
+                        <option value="2">Мужской</option>
                         <option value="1">Женский</option>
                     </select>
                 </div>
 
                 <div class="inputbox">
-                    <label>Тип боли в груди</label>
-                    <select name="chest_pain_type" required>
+                    <label>Рост</label>
+                    <input type="number" name="height" placeholder="См" required>
+                </div>
+
+                <div class="inputbox">
+                    <label>Вес</label>
+                    <input type="number" name="weight" step="0.1" placeholder="Кг" required>
+                </div>
+
+                <div class="inputbox">
+                    <label>Систолическое артериальное давление</label>
+                    <input type="number" name="ap_hi" placeholder="" required>
+                </div>
+
+                <div class="inputbox">
+                    <label>Диастолическое артериальное давление</label>
+                    <input type="number" name="ap_lo" placeholder="" required>
+                </div>
+
+                <div class="inputbox">
+                    <label>Холестерин</label>
+                    <select name="cholesterol" required>
                         <option value="" selected="false" disabled="disabled">Выбрать...</option>
-                        <option value="0">Бессимптомная</option>
-                        <option value="1">Неангинальная боль</option>
-                        <option value="2">Атипичная стенокардия</option>
-                        <option value="3">Типичная стенокардия</option>
+                        <option value="1">Нормальный</option>
+                        <option value="2">Выше нормы</option>
+                        <option value="3">Сильно выше нормы</option>
                     </select>
                 </div>
 
                 <div class="inputbox">
-                    <label>Давление в покое</label>
-                    <input type="number" name="resting_bp" placeholder="мм. рт. ст." required>
-                </div>
-
-                <div class="inputbox">
-                    <label>Холестерин в крови</label>
-                    <input type="number" name="cholesterol" placeholder="мм/дл" required>
-                </div>
-
-                <div class="inputbox">
-                    <label>Уровень сахара в крови натощак</label>
-                    <select name="fasting_bs" required>
-                        <option value="" selected="true" disabled="disabled">Выбрать...</option>
-                        <option value="0">больше 120 мг/дл</option>
-                        <option value="1">меньше 120 мг/дл</option>
+                    <label>Глюкоза</label>
+                    <select name="gluc" required>
+                        <option value="" selected="false" disabled="disabled">Выбрать...</option>
+                        <option value="1">Нормальный</option>
+                        <option value="2">Выше нормы</option>
+                        <option value="3">Сильно выше нормы</option>
                     </select>
                 </div>
 
                 <div class="inputbox">
-                    <label>ЭКГ в состоянии покоя</label>
-                    <p>- Normal: Нормальное</p>
-                    <p>- LVH: наличие вероятной или определенной гипертрофии левого желудочка по критериям Эстеса</p>
-                    <p>- ST: наличие аномалии зубца ST-T (инверсии зубца T и/или подъем или депрессия ST > 0,05 мм)</p>
-
-                    <select name="resting_ecg" required>
+                    <label>Курите?</label>
+                    <select name="smoke" required>
                         <option value="" selected="true" disabled="disabled">Выбрать...</option>
-                        <option value="0">normal</option>
-                        <option value="1">LVH</option>
-                        <option value="2">ST</option>
-                    </select>
-                </div>
-
-
-                <div class="inputbox">
-                    <label>Максимальная ЧСС </label>
-                    <input type="number" name="max_hr" placeholder="Количество ударов в минуту" required>
-                </div>
-
-                <div class="inputbox">
-                    <label>Стенокардия после физнагрузки</label>
-                    <select name="exercise_angina" required>
-                        <option value="" selected="true" disabled="disabled">Выбрать...</option>
-                        <option value="1">Есть</option>
+                        <option value="1">Да</option>
                         <option value="0">Нет</option>
                     </select>
                 </div>
 
                 <div class="inputbox">
-                    <label>Индуцированная депрессия ST</label>
-                    <input type="number" name="oldpeak" step="0.1" placeholder="мВ/сек" required>
-                </div>
-
-                <div class="inputbox">
-                    <label>Сегмент ST пиковой нагрузки</label>
-                    <select name="st_slope" required>
+                    <label>Употребляете алкоголь?</label>
+                    <select name="alco" required>
                         <option value="" selected="true" disabled="disabled">Выбрать...</option>
-                        <option value="0">Плоский</option>
-                        <option value="1">Наклон вверх</option>
-                        <option value="2">Наклон вниз</option>
+                        <option value="1">Да</option>
+                        <option value="0">Нет</option>
                     </select>
                 </div>
 
                 <div class="inputbox">
+                    <label>Занимаетесь спортом?</label>
+                    <select name="active" required>
+                        <option value="" selected="true" disabled="disabled">Выбрать...</option>
+                        <option value="1">Да</option>
+                        <option value="0">Нет</option>
+                    </select>
+                </div>
+
+
+
+                <div class="inputbox">
                     <button>Узнать прогноз</button>
                 </div>
+
+
+
+
 
                 <div class="prediction_text">
                     <label>{{ prediction_text }}</label><br>
