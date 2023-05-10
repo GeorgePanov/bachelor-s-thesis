@@ -24,14 +24,10 @@
         <h1>Прогнозирование развития сердечно-сосудистых заболеваний</h1>
     </header>
 
-    <nav>
-
-    </nav>
     <main class="main">
 
         <div class="form">
             <h2>Форма</h2>
-            <!-- <form action="#" method="post" class="input" novalidate> -->
             <form action="{{ url_for('predict')}}" method="post" class="input">
 
                 <div class="inputbox">
@@ -116,13 +112,9 @@
                 </div>
 
 
-
                 <div class="inputbox">
                     <button>Узнать прогноз</button>
                 </div>
-
-
-
 
 
                 <div class="prediction_text">
@@ -151,15 +143,16 @@
                 сердечно-сосудистые заболевания на основе поступающих данных, тем самым помогая спасти множество жизней.
             </p>
             <ul class="socials">
-                <li><a href="mailto:georgepanov19@gmail.com" target="_blank"><i class="fa fa-envelope"
-                            aria-hidden="true"></i></a></li>
-                <li><a href="https://github.com/GeorgePanov/bachelor-s-thesis" target="_blank"><i
+                <li><a href="mailto:georgepanov19@gmail.com" title="Написать на почту" target="_blank"><i
+                            class="fa fa-envelope" aria-hidden="true"></i></a></li>
+                <li><a href="https://github.com/GeorgePanov/bachelor-s-thesis" title="Исходный код" target="_blank"><i
                             class='fa fa-github'></i></a></li>
-                <li><a href="https://t.me/mister_glam_peach" target="_blank"><i class='fa fa-telegram'></i></a></li>
+                <li><a href="https://t.me/mister_glam_peach" title="Написать в Telegram" target="_blank"><i
+                            class='fa fa-telegram'></i></a></li>
             </ul>
         </div>
         <div class="footer-bottom">
-            <p>Made by George Panov in March 2023
+            <p>Made by George Panov in March 2023</p>
         </div>
 
     </footer>
