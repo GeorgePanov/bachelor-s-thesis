@@ -34,9 +34,9 @@ def predict():
 
     try:
         if pred == 1:
-            return render_template("index.html", prediction_text="Срочно идите к кардиологу", predict_probability=pred_proba[0][1].round(4))
+            return render_template("index.html", prediction_text="Срочно идите к кардиологу", predict_probability=pred_proba[0][1].round(4)*100)
         elif pred == 0:
-            return render_template("index.html", prediction_text="Вы можете не торопиться идти к кардеологу", predict_probability=pred_proba[0][1].round(4))
+            return render_template("index.html", prediction_text="Вы можете не торопиться идти к кардеологу", predict_probability=pred_proba[0][1].round(4)*100)
     except:
         return render_template("index.html", prediction_text="Что-то сломалось")
 
