@@ -95,6 +95,12 @@ header h1 {
 
 /* Форма для заполнения */
 .form .input .inputbox input {
+    /* Убирает стрелочки для выбора */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+
     width: 100%;
     height: 50px;
     background: var(--teeny-greeny);
@@ -195,6 +201,7 @@ footer {
     margin: 0 auto;
     line-height: 28px;
     font-size: 16px;
+    padding: 0 20px;
 }
 
 .socials {
