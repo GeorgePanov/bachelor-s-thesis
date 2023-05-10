@@ -135,7 +135,7 @@ header h1 {
 }
 
 
-.form .input .inputbox button {
+.button {
     margin: 20px;
     margin-left: auto;
     width: 100%;
@@ -151,7 +151,7 @@ header h1 {
         2px 2px 6px rgb(0, 0, 0, 0.1);
 }
 
-.form .input .inputbox button:active {
+.button:active {
     box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 1),
         inset 2px 2px 6px rgb(0, 0, 0, 0.1);
 }
